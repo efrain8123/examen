@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleado</title>
+</head>
+<body>
+    <label for="antiguedad">Antigüedad del empleado:</label>
+<input type="number" id="antiguedad"><br>
+<label for="sueldo">Sueldo del empleado:</label>
+<input type="number" id="sueldo"><br>
+<button onclick="calcularBono()">Calcular Bono Navideño</button>
+<p id="resultado"></p>
+         
+       <script>
+        function calcularBono() {
+  const antiguedad = Number(document.getElementById('antiguedad').value);
+  const sueldo = Number(document.getElementById('sueldo').value);
+  let bono = 0;
+  
+  if (antiguedad > 4 || sueldo < 2000) {
+    bono = sueldo * 0.25;
+  } else {
+    bono = sueldo * 0.2;
+  }
+  
+  const resultado = `El bono navideño que le corresponde al empleado es de ${bono.toFixed(2)}.`;
+  document.getElementById('resultado').textContent = resultado;
+}
+       </script>
+      
+</body>
+</html>
